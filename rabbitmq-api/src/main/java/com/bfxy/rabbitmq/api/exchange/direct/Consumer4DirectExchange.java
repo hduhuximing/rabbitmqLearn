@@ -11,12 +11,11 @@ public class Consumer4DirectExchange {
 	public static void main(String[] args) throws Exception {
 		
 		
-        ConnectionFactory connectionFactory = new ConnectionFactory() ;  
-        
-        connectionFactory.setHost("192.168.11.76");
+        ConnectionFactory connectionFactory = new ConnectionFactory() ;
+        connectionFactory.setHost("47.102.223.68");
         connectionFactory.setPort(5672);
 		connectionFactory.setVirtualHost("/");
-		
+		//自动重连
         connectionFactory.setAutomaticRecoveryEnabled(true);
         connectionFactory.setNetworkRecoveryInterval(3000);
         Connection connection = connectionFactory.newConnection();

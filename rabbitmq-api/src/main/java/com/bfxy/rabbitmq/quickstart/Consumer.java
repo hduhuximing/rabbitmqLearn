@@ -3,7 +3,6 @@ package com.bfxy.rabbitmq.quickstart;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Envelope;
 import com.rabbitmq.client.QueueingConsumer;
 import com.rabbitmq.client.QueueingConsumer.Delivery;
 
@@ -13,7 +12,7 @@ public class Consumer {
 		
 		//1 创建一个ConnectionFactory, 并进行配置
 		ConnectionFactory connectionFactory = new ConnectionFactory();
-		connectionFactory.setHost("192.168.11.76");
+		connectionFactory.setHost("47.102.223.68");
 		connectionFactory.setPort(5672);
 		connectionFactory.setVirtualHost("/");
 		
@@ -25,6 +24,12 @@ public class Consumer {
 		
 		//4 声明（创建）一个队列
 		String queueName = "test001";
+        /**
+         * durable 持久化
+         * exclusive 是否独占，保证顺序消费
+         * autoDelete 脱离exchange直接删除
+         * arguments 扩展
+         */
 		channel.queueDeclare(queueName, true, false, false, null);
 		
 		//5 创建消费者

@@ -12,7 +12,7 @@ public class Consumer4FanoutExchange {
 		
         ConnectionFactory connectionFactory = new ConnectionFactory() ;  
         
-        connectionFactory.setHost("192.168.11.76");
+        connectionFactory.setHost("47.102.223.68");
         connectionFactory.setPort(5672);
 		connectionFactory.setVirtualHost("/");
 		
